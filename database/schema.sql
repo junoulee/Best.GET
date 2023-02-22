@@ -32,7 +32,7 @@ CREATE TABLE "public"."products" (
 	"manufacturer" varchar(255) NOT NULL,
 	"description" TEXT NOT NULL,
 	"price" DECIMAL(8,2) NOT NULL,
-	"image_url" varchar(255) NOT NULL,
+	"imageUrl" varchar(255) NOT NULL,
   "category" varchar(255) NOT NULL,
 	"created_at" TIMESTAMP(255) NOT NULL,
 	CONSTRAINT "products_pk" PRIMARY KEY ("product_id")
