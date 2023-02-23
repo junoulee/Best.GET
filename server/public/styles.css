@@ -1,0 +1,54 @@
+:root {
+  --color-11191f: #11191f;
+  --color-f6eb16: #f6eb16;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* NavBar starts */
+
+.header-upper {
+  background-color: var(--color-11191f);
+}
+
+.search-button {
+  background-color: var(--color-f6eb16);
+  border-style: solid;
+  border-color: var(--color-f6eb16);
+}
+
+.left-icons {
+  color: white;
+  font-size: 2rem;
+  padding-right: 20px;
+}
+
+.right-icons {
+  color: white;
+  font-size: 2rem;
+}
+
+.shopping-cart {
+  color: var(--color-f6eb16);
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: inherit;
+}
+
+/* NavBar ends */
+
+@media (min-width: 576px) {
+  .left-icons {
+    display: none;
+  }
+
+  .navbar-text {
+    font-size: 0.8rem;
+    width: 120px;
+  }
+}
