@@ -10,7 +10,7 @@ const app = express();
 app.use(staticMiddleware);
 app.use(jsonMiddleware);
 
-const db = new pg.Pool({ // eslint-disable-line
+const db = new pg.Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: {
     rejectUnauthorized: false
