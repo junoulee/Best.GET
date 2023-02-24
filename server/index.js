@@ -24,16 +24,16 @@ app.get('/api/products', (req, res, next) => {
           "manufacturer",
           "description",
           "price",
-          "image_url",
+          "imageUrl",
           "category"
     from "products"
   `;
   db.query(sql)
-    .then(result => {
+    .then((result) => {
       const products = result.rows;
       res.status(200).json(products);
     })
-    .catch(err => next(err));
+    .catch((err) => next(err));
 });
 
 app.use(errorMiddleware);
