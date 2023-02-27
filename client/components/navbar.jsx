@@ -11,7 +11,7 @@ export default function NavBar() {
 
         <nav className="navbar navbar-expand-md bg-blue navbar-dark">
           <a className="navbar-brand" href="#">
-            <img src="./logo.png" alt="" width="90" height="60" className="d-inline-block align-text-top ms-3 mb-2 me-3"/>
+            <img src="./images/logo.png" alt="" width="90" height="60" className="d-inline-block align-text-top ms-3 mb-2 me-3"/>
           </a>
           <a className="justify-content-end ms-5 left-icons"><SlHeart/></a>
           <a className="justify-content-end left-icons"><VscAccount/></a>

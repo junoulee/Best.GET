@@ -22,22 +22,22 @@ function SmallDisplays() {
         <div className="small-displays px-0 py-4">
           <img
             className="img-fluid rounded-3"
-            src="tablet.jpg" alt="" />
+            src="./images/tablet.jpg" alt="" />
         </div>
         <div className="small-displays px-0 py-4">
           <img
             className="img-fluid rounded-3"
-            src="./laptop.webp" alt="" />
+            src="./images/laptop.webp" alt="" />.
         </div>
         <div className="small-displays px-0 py-4">
           <img
             className="img-fluid rounded-3"
-            src="./keyboard.webp" alt="" />
+            src="./images/keyboard.webp" alt="" />
         </div>
         <div className="small-displays px-0 py-4">
           <img
             className="img-fluid rounded-3"
-            src="./gray.avif" alt="" />
+            src="./images/gray.avif" alt="" />
         </div>
       </div>
     </div>

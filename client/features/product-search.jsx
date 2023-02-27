@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { SearchBar } from '../components/searchbar';
 
 export function ProductSearch() {
@@ -11,7 +11,6 @@ export function ProductSearch() {
       event.preventDefault();
       const response = await fetch('/api/products');
       const data = await response.json();
-      setSuggestions(data);
       const matchingResults = data.filter((product) =>
         product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         product.description.toLowerCase().includes(searchTerm.toLowerCase())
@@ -21,6 +20,15 @@ export function ProductSearch() {
       console.log(searchResults, searchTerm);
     } catch (err) { console.error('Error fetching data:', err); }
   }
+
+  useEffect(() => {
+    async function fetchSuggestions() {
+      const response = await fetch(`/api/products?search=${searchTerm}`);
+      const data = await response.json();
+      setSuggestions(data);
+    }
+    fetchSuggestions();
+  }, [searchTerm]);
 
   function handleInputChange(event) {
     setSearchTerm(event.target.value);

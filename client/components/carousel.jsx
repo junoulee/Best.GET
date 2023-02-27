@@ -62,14 +62,14 @@ export function Carousel({ images }) {
 export const carouselImages = [
   {
     id: 1,
-    image: 'ipad1.jpg'
+    image: './images/ipad1.jpg'
   },
   {
     id: 2,
-    image: 'ipad2.jpg'
+    image: './images/ipad2.jpg'
   },
   {
     id: 3,
-    image: 'ipad3.jpg'
+    image: './images/ipad3.jpg'
   }
 ];

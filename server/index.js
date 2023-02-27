@@ -18,7 +18,8 @@ const db = new pg.Pool({
 });
 
 app.get('/api/products', (req, res, next) => {
-  const sql = `
+  const searchTerm = req.query.search;
+  let sql = `
   select "productId",
           "name",
           "manufacturer",
@@ -28,6 +29,9 @@ app.get('/api/products', (req, res, next) => {
           "category"
     from "products"
   `;
+  if (searchTerm) {
+    sql += `WHERE name ILIKE '%${searchTerm}%'`;
+  }
   db.query(sql)
     .then((result) => {
       const products = result.rows;
