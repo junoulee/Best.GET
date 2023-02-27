@@ -19,7 +19,7 @@ const db = new pg.Pool({
 
 app.get('/api/products', (req, res, next) => {
   const sql = `
-  select "product_id",
+  select "productId",
           "name",
           "manufacturer",
           "description",

@@ -27,7 +27,7 @@ CREATE TABLE "public"."users" (
 
 
 CREATE TABLE "public"."products" (
-	"product_id" serial NOT NULL,
+	"productId" serial NOT NULL,
 	"name" varchar(255) NOT NULL,
 	"manufacturer" varchar(255) NOT NULL,
 	"description" TEXT NOT NULL,
@@ -35,7 +35,7 @@ CREATE TABLE "public"."products" (
 	"imageUrl" varchar(255) NOT NULL,
   "category" varchar(255) NOT NULL,
 	"created_at" TIMESTAMP(255) NOT NULL,
-	CONSTRAINT "products_pk" PRIMARY KEY ("product_id")
+	CONSTRAINT "products_pk" PRIMARY KEY ("productId")
 ) WITH (
   OIDS=FALSE
 );
@@ -61,7 +61,7 @@ CREATE TABLE "public"."orders" (
 CREATE TABLE "public"."order_items" (
 	"order_item_id" serial NOT NULL,
 	"order_id" integer NOT NULL,
-	"product_id" integer NOT NULL,
+	"productId" integer NOT NULL,
 	"quantity" integer NOT NULL,
 	"price" DECIMAL(8,2) NOT NULL,
 	CONSTRAINT "order_items_pk" PRIMARY KEY ("order_item_id")
@@ -76,4 +76,4 @@ CREATE TABLE "public"."order_items" (
 ALTER TABLE "orders" ADD CONSTRAINT "orders_fk0" FOREIGN KEY ("user_id") REFERENCES "users"("user_id");
 
 ALTER TABLE "order_items" ADD CONSTRAINT "order_items_fk0" FOREIGN KEY ("order_id") REFERENCES "orders"("order_id");
-ALTER TABLE "order_items" ADD CONSTRAINT "order_items_fk1" FOREIGN KEY ("product_id") REFERENCES "products"("product_id");
+ALTER TABLE "order_items" ADD CONSTRAINT "order_items_fk1" FOREIGN KEY ("productId") REFERENCES "products"("productId");
