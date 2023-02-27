@@ -23,8 +23,8 @@ export default function NavBar() {
           <a className="d-none d-md-block navbar-text text-white mb-0">Log In<br/>My Account</a>
           <a className="d-none d-md-block right-icons shopping-cart mx-3"><BsCart3/></a>
           <div className="d-flex flex-column mt-3 cart-details">
-            <span className="d-none d-md-block badge bg-white text-dark">0</span>
-            <p className="d-none d-md-block text-white cart-value">$500</p>
+            <span className="d-none d-md-block badge bg-danger text-white">0</span>
+            {/* <p className="d-none d-md-block text-white cart-value">$500</p> */}
           </div>
         </nav>
       </div>
