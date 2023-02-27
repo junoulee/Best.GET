@@ -17,7 +17,7 @@ export function ProductSearch() {
       );
       setSearchResults(matchingResults);
       // eslint-disable-next-line
-      console.log(searchResults, searchTerm);
+      console.log(searchResults, searchTerm, matchingResults);
     } catch (err) { console.error('Error fetching data:', err); }
   }
 
@@ -35,7 +35,7 @@ export function ProductSearch() {
     const filterSuggestions = suggestions.filter((value) => {
       return value.name.toLowerCase().includes(searchTerm.toLowerCase());
     });
-    if (searchTerm === '') {
+    if (event.target.value === '') {
       setSuggestions([]);
     } else {
       setSuggestions(filterSuggestions);
