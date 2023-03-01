@@ -1,13 +1,16 @@
 import React from 'react';
 import Home from './pages/home';
-import NavBar from './components/navbar';
+import { Routes, Route } from 'react-router-dom';
+
+// import SearchResults from './pages/search-results';
+// {/* <Route path="/search=" element={<SearchResults />} /> */}
 
 export default function App() {
-
   return (
-    <>
-      <NavBar />
-      <Home />
-    </>
+
+    <Routes>
+      <Route path="/" element={<Home />} />
+    </Routes>
+
   );
 }
