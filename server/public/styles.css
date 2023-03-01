@@ -209,8 +209,9 @@ a {
   .badge {
     margin-bottom: 30px;
     font-size: 0.7rem;
-    margin-left: -15px;
+    margin-left: -17px;
     vertical-align: center;
+    align-items: center;
     border-radius: 50%;
     font-weight: 100;
     border-style: solid;

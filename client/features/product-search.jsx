@@ -23,7 +23,6 @@ export function ProductSearch({ onSearch }) {
       onSearch(matchingResults);
       // eslint-disable-next-line
       console.log(searchTerm, matchingResults);
-
     } catch (err) { console.error('Error fetching data:', err); }
   }
 
