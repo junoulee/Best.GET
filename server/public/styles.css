@@ -1,6 +1,7 @@
 :root {
   --color-11191f: #11191f;
   --color-f6eb16: #f6eb16;
+  --color-e5e5e5c0: #e5e5e5c0;
 }
 
 a {
@@ -33,6 +34,10 @@ a {
 
 .shopping-cart {
   color: var(--color-f6eb16);
+}
+
+.price-decimal {
+  font-size: 70%;
 }
 
 .form-control:focus {
@@ -108,6 +113,51 @@ a {
 
 /* body ends */
 
+/* search-results starts */
+.search-body {
+  background-color: var(--color-e5e5e5c0);
+}
+
+.card {
+  height: 661px;
+  cursor: pointer;
+}
+
+.list-group-item {
+  border-style: none;
+}
+
+.stars {
+  color: gold;
+}
+
+.card-body-top {
+  height: 136px;
+  border-bottom: none;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.heart-favorites {
+  text-align: right;
+  padding-right: 8px;
+  font-size: 1.3rem;
+  color: red;
+}
+
+.card-img-top {
+  height: 339px;
+  margin-top: 5px;
+}
+
+.card-title:hover {
+  color: orange;
+}
+
+/* search-results ends */
 @media (max-width: 576px) {
   .small-displays {
     width: 100%;

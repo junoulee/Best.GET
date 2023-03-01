@@ -4,7 +4,7 @@ import { SlHeart } from 'react-icons/sl';
 import { VscAccount } from 'react-icons/vsc';
 import { ProductSearch } from '../features/product-search';
 
-export default function NavBar() {
+export default function NavBar({ onSearch }) {
   return (
     <header className="header-upper py-1">
       <div className="container-xxl">
@@ -16,7 +16,7 @@ export default function NavBar() {
           <a className="justify-content-end ms-5 left-icons"><SlHeart/></a>
           <a className="justify-content-end left-icons"><VscAccount/></a>
           <a className="justify-content-end left-icons shopping-cart px-0"><BsCart3/></a>
-          <ProductSearch/>
+          <ProductSearch onSearch={onSearch}/>
           <a className="d-none d-md-block right-icons mx-3"><SlHeart /></a>
           <a className="d-none d-md-block navbar-text text-white mb-0">View Wishlist</a>
           <a className="d-none d-md-block right-icons mx-3"><VscAccount/></a>

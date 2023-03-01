@@ -1,5 +1,6 @@
 require('dotenv/config');
 const express = require('express');
+const path = require('path');
 const staticMiddleware = require('./static-middleware');
 const errorMiddleware = require('./error-middleware');
 const jsonMiddleware = express.json();
@@ -9,6 +10,7 @@ const app = express();
 
 app.use(staticMiddleware);
 app.use(jsonMiddleware);
+app.use(errorMiddleware);
 
 const db = new pg.Pool({
   connectionString: process.env.DATABASE_URL,
@@ -40,7 +42,9 @@ app.get('/api/products', (req, res, next) => {
     .catch((err) => next(err));
 });
 
-app.use(errorMiddleware);
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 app.listen(process.env.PORT, () => {
   process.stdout.write(`\n\napp listening on port ${process.env.PORT}\n\n`);

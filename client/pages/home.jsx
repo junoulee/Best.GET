@@ -1,45 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { carouselImages, Carousel } from '../components/carousel';
+import NavBar from '../components/navbar';
+import SmallDisplays from '../components/small-displays';
+import SearchResults from '../components/search-results';
 
 export default function Home(props) {
+  const [searchResults, setSearchResults] = useState();
   return (
-    <section className="wrapper py-5">
-      <div className="container-xxl">
-        <div className="row">
-          <Carousel images={carouselImages}/>
-          <SmallDisplays/>
+    <>
+      <NavBar onSearch={setSearchResults} />
+      <section className="wrapper py-5">
+        <div className="container-xxl">
+          <div className="row">
+            {!searchResults && <Carousel images={carouselImages} />}
+            {!searchResults && <SmallDisplays />}
+            {searchResults && <SearchResults results={searchResults} />}
+          </div>
         </div>
-      </div>
 
-    </section>
-  );
-}
-
-function SmallDisplays() {
-  return (
-    <div className="col-lg-6">
-      <div className="d-flex flex-wrap justify-content-between align-items-center small-cards">
-        <div className="small-displays px-0 py-4">
-          <img
-            className="img-fluid rounded-3"
-            src="./images/tablet.jpg" alt="" />
-        </div>
-        <div className="small-displays px-0 py-4">
-          <img
-            className="img-fluid rounded-3"
-            src="./images/laptop.webp" alt="" />.
-        </div>
-        <div className="small-displays px-0 py-4">
-          <img
-            className="img-fluid rounded-3"
-            src="./images/keyboard.webp" alt="" />
-        </div>
-        <div className="small-displays px-0 py-4">
-          <img
-            className="img-fluid rounded-3"
-            src="./images/gray.avif" alt="" />
-        </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 }

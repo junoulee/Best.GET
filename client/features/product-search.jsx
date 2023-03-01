@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { SearchBar } from '../components/searchbar';
 
-export function ProductSearch() {
-  const [searchResults, setSearchResults] = useState([]);
+// Move searchResults to Home
+// Accept prop named "onSearch"
+// When search results are fetched, pass them to onSearch(searchResults)
+export function ProductSearch({ onSearch }) {
+  // const [searchResults, setSearchResults] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [suggestions, setSuggestions] = useState([]);
+  const [submitted, setSubmitted] = useState(false);
 
   async function handleSearch(event) {
     try {
@@ -15,9 +19,10 @@ export function ProductSearch() {
         product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         product.description.toLowerCase().includes(searchTerm.toLowerCase())
       );
-      setSearchResults(matchingResults);
+      // setSearchResults(matchingResults);
+      onSearch(matchingResults);
       // eslint-disable-next-line
-      console.log(searchResults, searchTerm, matchingResults);
+      console.log(searchTerm, matchingResults);
     } catch (err) { console.error('Error fetching data:', err); }
   }
 
@@ -27,7 +32,7 @@ export function ProductSearch() {
       const data = await response.json();
       setSuggestions(data);
     }
-    fetchSuggestions();
+    if (searchTerm) fetchSuggestions();
   }, [searchTerm]);
 
   function handleInputChange(event) {
@@ -41,11 +46,21 @@ export function ProductSearch() {
       setSuggestions(filterSuggestions);
     }
   }
+  function handleKeyPress(event) {
+    const enterButton = event.type === 'keypress' && event.keyCode === 13;
+    const clickButton = event.type === 'click';
+    if (enterButton || clickButton) {
+      setSubmitted(!submitted);
+    }
+    if (searchTerm === '') {
+      setSubmitted(false);
+    }
+  }
 
   return (
     <>
-      <SearchBar handleSearch={handleSearch} handleInputChange={handleInputChange}/>
-      {searchTerm && (
+      <SearchBar handleSearch={handleSearch} handleKeyPress={handleKeyPress} handleInputChange={handleInputChange} />
+      {searchTerm && submitted === false && (
         <div className="search-dropdown">
           {suggestions.map((value) =>
             <a key={value.productId} href="" className="search-suggestions">{value.name}</a>
