@@ -3,15 +3,20 @@ import { BsCart3 } from 'react-icons/bs';
 import { SlHeart } from 'react-icons/sl';
 import { VscAccount } from 'react-icons/vsc';
 import { ProductSearch } from '../features/product-search';
+// import { Link } from 'react-router-dom';
 
 export default function NavBar({ onSearch }) {
+  function logoClick() {
+    onSearch(undefined);
+  }
+
   return (
     <header className="header-upper py-1">
       <div className="container-xxl">
 
         <nav className="navbar navbar-expand-md bg-blue navbar-dark">
-          <a className="navbar-brand" href="#">
-            <img src="./images/logo.png" alt="" width="90" height="60" className="d-inline-block align-text-top ms-3 mb-2 me-3"/>
+          <a onClick={logoClick} className="navbar-brand" href="#">
+            <img src="./images/logo.png" alt="logo" width="90" height="60" className="d-inline-block align-text-top ms-3 mb-2 me-3"/>
           </a>
           <a className="justify-content-end ms-5 left-icons"><SlHeart/></a>
           <a className="justify-content-end left-icons"><VscAccount/></a>

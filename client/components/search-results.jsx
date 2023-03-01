@@ -7,8 +7,8 @@ export default function SearchResults({ results }) {
       <div className="row">
         {results.map((result) => (
 
-          <div className="col-lg-3 col-md-6 mb-4 col-12" key={result.productId}>
-            <div className="card" style={{ width: '18rem' }}>
+          <div className="col-12 col-sm-6 col-md-6 col-lg-3 mb-4" key={result.productId}>
+            <div className="card w-100">
               <a href="" className="heart-favorites "><FaRegHeart /></a>
               <img src={result.imageUrl} className="card-img-top" alt={result.name}/>
               <div className="card-body card-body-top">
