@@ -6,6 +6,7 @@ import SearchResults from '../components/search-results';
 
 export default function Home(props) {
   const [searchResults, setSearchResults] = useState();
+
   return (
     <>
       <NavBar onSearch={setSearchResults} />
