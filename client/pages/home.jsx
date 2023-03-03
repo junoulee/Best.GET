@@ -4,6 +4,7 @@ import NavBar from '../components/navbar';
 import SmallDisplays from '../components/small-displays';
 import SearchResults from '../components/search-results';
 import Footer from '../components/footer';
+import FreeShipping from '../components/free-shipping';
 
 export default function Home(props) {
   const [searchResults, setSearchResults] = useState();
@@ -11,6 +12,7 @@ export default function Home(props) {
   return (
     <>
       <NavBar onSearch={setSearchResults} />
+      {searchResults && <FreeShipping />}
       <section className="wrapper py-5">
         <div className="container-xxl">
           <div className="row">

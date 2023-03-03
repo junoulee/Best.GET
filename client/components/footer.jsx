@@ -1,12 +1,12 @@
 import React from 'react';
-import { BiCar } from 'react-icons/bi';
-
+import { BsFacebook, BsInstagram, BsLinkedin, BsGithub } from 'react-icons/bs';
+import { FiTwitter } from 'react-icons/fi';
 export default function Footer() {
   return (
     <div className="footer-container">
-      <footer className="text-center text-lg-start bg-white text-muted">
+      <footer className="text-center text-lg-start bg-white">
 
-        <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom footer">
+        {/* <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom footer">
 
           <div className="me-5 d-none d-lg-block">
             <span>Get connected with us on social networks:</span>
@@ -31,27 +31,30 @@ export default function Footer() {
             <BiCar />
           </a>
 
-        </section>
+        </section> */}
 
         <section className="footer">
           <div className="container text-center text-md-start mt-5">
 
             <div className="row mt-3">
 
-              <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 mt-5">
 
                 <h6 className="text-uppercase fw-bold mb-4">
-                  <i className="fas fa-gem me-3 text-secondary" />Company name
+                  <img src="/images/logo.png" alt="logo" width="100" height="70" className="d-inline-block align-text-top ms-3 mb-2 me-3" />
                 </h6>
-                <p>
-                  Here you can use rows and columns to organize your footer content. Lorem ipsum
-                  dolor sit amet, consectetur adipisicing elit.
+                <p className="social-media">
+                  <a className="social-icons" href=""><BsFacebook /></a>
+                  <a className="social-icons" href=""><BsInstagram /></a>
+                  <a className="social-icons" href=""><FiTwitter /></a>
+                  <a className="social-icons" href=""><BsLinkedin /></a>
+                  <a className="social-icons" href=""><BsGithub /></a>
                 </p>
               </div>
 
-              <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <div className="text-white col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
 
-                <h6 className="text-uppercase fw-bold mb-4">
+                <h6 className="text-uppercase fw-bold mb-4 mt-3">
                   Products
                 </h6>
                 <p>
@@ -68,9 +71,9 @@ export default function Footer() {
                 </p>
               </div>
 
-              <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <div className="text-white col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
 
-                <h6 className="text-uppercase fw-bold mb-4">
+                <h6 className="text-uppercase fw-bold mb-4 mt-3">
                   Useful links
                 </h6>
                 <p>
@@ -87,9 +90,9 @@ export default function Footer() {
                 </p>
               </div>
 
-              <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <div className="text-white col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
 
-                <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
+                <h6 className="text-uppercase fw-bold mb-4 mt-3">Contact</h6>
                 <p><i className="fas fa-home me-3 text-secondary" /> New York, NY 10012, US</p>
                 <p>
                   <i className="fas fa-envelope me-3 text-secondary" />
@@ -104,9 +107,9 @@ export default function Footer() {
           </div>
         </section>
 
-        <div className="text-center p-4" style={{ backgroundColor: 'rgba(0, 0, 0, 0.025)' }}>
-          © 2021 Copyright:
-          <a className="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        <div className="text-center p-4" style={{ backgroundColor: '#e5e5e5c0' }}>
+          © 2023 Copyright:
+          <a className="text-reset copyright fw-bold" href=""> C1222 Final Project</a>
         </div>
 
       </footer>

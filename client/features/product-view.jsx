@@ -6,6 +6,7 @@ import { BiCar } from 'react-icons/bi';
 import { RiTruckLine } from 'react-icons/ri';
 import { FiCheckCircle } from 'react-icons/fi';
 import { GoPackage } from 'react-icons/go';
+import Footer from '../components/footer';
 // import { Link } from 'react-router-dom';
 
 export default function ProductView({ productId }) {
@@ -44,7 +45,7 @@ export default function ProductView({ productId }) {
             </div>
             <div className="col-12 col-sm-6 col-md-6 col-lg-4 mb-4">
               <div className="card w-100" >
-                <div className="card-header">{product.manufacturer}</div>
+                <div className="card-header text-white bg-primary">{product.manufacturer}</div>
                 <div className="card-body">
                   <h4 className="card-title">{product.name}</h4>
                   <p className="card-text stars"><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
@@ -78,6 +79,7 @@ export default function ProductView({ productId }) {
         </div>
       </section>
       )}
+      <Footer />
     </>
   );
 

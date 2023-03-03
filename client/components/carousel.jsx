@@ -1,32 +1,32 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 export function Carousel({ images }) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const lengthOfArray = images.length;
-  const id = images[currentSlide].id;
-  const slideImage = images[currentSlide].image;
+  // const id = images[currentSlide].id;
+  // const slideImage = images[currentSlide].image;
 
-  useEffect(() => {
-    const slideShow = setTimeout(next, 5000);
-    return () => clearTimeout(slideShow);
-  });
-
-  const previous = () => {
+  const previous = useCallback(() => {
     const firstSlide = currentSlide === 0;
     const newIndex = firstSlide ? lengthOfArray - 1 : currentSlide - 1;
     setCurrentSlide(newIndex);
-  };
+  }, [currentSlide, lengthOfArray]);
 
-  const next = () => {
+  const next = useCallback(() => {
     const lastSlide = currentSlide === lengthOfArray - 1;
     const newIndex = lastSlide ? 0 : currentSlide + 1;
     setCurrentSlide(newIndex);
-  };
+  }, [currentSlide, lengthOfArray]);
 
   const clickDot = (i) => {
     setCurrentSlide(i);
   };
+
+  useEffect(() => {
+    const slideShow = setTimeout(next, 5000);
+    return () => clearTimeout(slideShow);
+  }, [next, currentSlide]);
 
   return (
     <div className="col-lg-6">
@@ -40,12 +40,11 @@ export function Carousel({ images }) {
           </ol>
 
           <div className="carousel-inner">
-            <div className="carousel-item active">
-              <img key={id} className="d-block w-100 img-fluid rounded-3" src={slideImage} alt="First slide" />
-            </div>
-            <div className="carousel-item">
-              <img key={id} className="d-block w-100 img-fluid rounded-3" src={slideImage} alt="Second slide" />
-            </div>
+            {images.map((slide, i) =>
+              <div className={`carousel-item ${i === currentSlide ? 'active' : ''}`} key={slide.id}>
+                <img className="d-block w-100 img-fluid rounded-3" src={slide.image} alt={`Slide ${i}`} />
+              </div>
+            )}
             <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
               <span className="carousel-control-prev-icon" onClick={previous} aria-hidden="true" />
             </a>

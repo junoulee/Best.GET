@@ -10,7 +10,9 @@ export default function NavbarHeader() {
               <p className="text-start text-white mb-0">Free Shipping for Orders Over $50 & Free Returns</p>
             </div>
             <div className="col-6">
-              <p className="text-end text-white mb-0">Contact Us</p>
+              <a className="text-end text-white top-right mb-0">Contact Us</a>
+              <a className="text-end text-white top-right mb-0">Help</a>
+              <a className="text-end text-white top-right mb-0">FAQ</a>
             </div>
           </div>
         </div>
