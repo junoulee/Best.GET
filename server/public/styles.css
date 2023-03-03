@@ -41,9 +41,55 @@ a {
   border-color: inherit;
 }
 
+.top-bar {
+  color: var(--color-e5e5e5c0);
+  font-size: 0.9rem;
+}
+
+.top-right {
+  float: right;
+  margin-left: 30px;
+}
+
+.shipping {
+  background-color: var(--color-e5e5e5c0);
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-weight: 600;
+  color: var(--color-11191f);
+}
+
 /* NavBar ends */
 
+/* footer starts */
+
+.footer {
+  background-color: var(--color-11191f);
+}
+
+.social-media {
+  font-size: 1.6rem;
+}
+
+.social-icons {
+  color: white;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.text-uppercase {
+  color: var(--color-e5e5e5c0);
+}
+
+.copyright {
+  color: var(--color-e5e5e5c0);
+}
+
+/* footer ends */
+
 /* body starts */
+
 .carousel-inner {
   bottom: 40px;
 }
@@ -114,16 +160,18 @@ a {
   background-color: var(--color-e5e5e5c0);
 }
 
-.card {
+.result-card {
   height: 610px;
   cursor: pointer;
+  border-color: rgb(169, 163, 163);
 }
 
-.card:hover {
+.result-card:hover {
   border-color: orange;
+  box-shadow: 2px 2px 5px #fc894d;
 }
 
-.card:active {
+.result-card:active {
   box-shadow: 2px 2px 5px #fc894d;
 }
 
@@ -146,10 +194,10 @@ a {
 }
 
 .heart-favorites {
-  text-align: right;
-  padding-right: 8px;
   font-size: 1.3rem;
   color: red;
+  border-style: none;
+  width: 32px;
 }
 
 .card-img-top {
@@ -157,7 +205,7 @@ a {
   margin-top: 5px;
 }
 
-.card-title:hover {
+.result-card-title:hover {
   color: orange;
 }
 
@@ -165,12 +213,45 @@ a {
   font-size: 70%;
 }
 
+.results-text {
+  color: var(--color-11191f);
+  margin-bottom: 20px;
+  margin-top: -20px;
+}
+
 /* search-results ends */
+
+/* product-view starts */
+.detail-icons {
+  margin-right: 10px;
+  font-size: 2rem;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+.add-to-cart {
+  background-color: #ffc107;
+  border-style: none;
+  font-weight: 600;
+  border-radius: 20px;
+}
+
+/* product-view starts */
 @media (max-width: 576px) {
   .small-displays {
     width: 100%;
     margin-right: 0;
     margin-bottom: 1rem;
+  }
+
+  .free-shipping-text {
+    font-size: 0.8rem;
   }
 }
 
@@ -182,6 +263,14 @@ a {
 
   .cart-value {
     font-size: 0.8rem;
+  }
+
+  .product-img-large {
+    margin-top: -30px;
+  }
+
+  .about-item {
+    margin-top: -60px;
   }
 
   /* .small-displays {
@@ -254,6 +343,11 @@ a {
 @media (min-width: 1200px) {
   .search-dropdown {
     width: 55%;
+  }
+
+  .product-img-large {
+    width: 550px;
+    height: 550px;
   }
 }
 

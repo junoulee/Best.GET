@@ -9,6 +9,7 @@ export function ProductSearch({ onSearch }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [suggestions, setSuggestions] = useState([]);
   const [submitted, setSubmitted] = useState(false);
+  const [noResult, setNoResult] = useState(false);
 
   async function handleSearch(event) {
     try {
@@ -21,8 +22,12 @@ export function ProductSearch({ onSearch }) {
       );
       // setSearchResults(matchingResults);
       onSearch(matchingResults);
+      if (matchingResults.length === 0) {
+        setNoResult(true);
+
+      }
       // eslint-disable-next-line
-      console.log(searchTerm, matchingResults);
+      console.log(searchTerm, matchingResults, noResult);
     } catch (err) { console.error('Error fetching data:', err); }
   }
 
