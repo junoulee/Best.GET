@@ -3,6 +3,7 @@ import { carouselImages, Carousel } from '../components/carousel';
 import NavBar from '../components/navbar';
 import SmallDisplays from '../components/small-displays';
 import SearchResults from '../components/search-results';
+import Footer from '../components/footer';
 
 export default function Home(props) {
   const [searchResults, setSearchResults] = useState();
@@ -20,6 +21,7 @@ export default function Home(props) {
         </div>
 
       </section>
+      <Footer />
     </>
   );
 }

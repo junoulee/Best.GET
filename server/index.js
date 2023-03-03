@@ -8,6 +8,7 @@ const ClientError = require('./client-error');
 const pg = require('pg');
 const app = express();
 
+app.use(express.json());
 app.use(staticMiddleware);
 app.use(jsonMiddleware);
 app.use(errorMiddleware);
