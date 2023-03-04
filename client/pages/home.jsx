@@ -16,12 +16,11 @@ export default function Home(props) {
       <section className="wrapper py-5">
         <div className="container-xxl">
           <div className="row">
-            {!searchResults && <Carousel images={carouselImages} />}
-            {!searchResults && <SmallDisplays />}
+            {!searchResults && <Carousel onSearch={setSearchResults} images={carouselImages} />}
+            {!searchResults && <SmallDisplays onSearch={setSearchResults} />}
             {searchResults && <SearchResults results={searchResults} />}
           </div>
         </div>
-
       </section>
       <Footer />
     </>
