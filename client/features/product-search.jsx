@@ -9,7 +9,6 @@ export function ProductSearch({ onSearch }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [suggestions, setSuggestions] = useState([]);
   const [submitted, setSubmitted] = useState(false);
-  // const [noResult, setNoResult] = useState(false);
 
   async function handleSearch(event) {
     try {
@@ -21,10 +20,6 @@ export function ProductSearch({ onSearch }) {
         product.description.toLowerCase().includes(searchTerm.toLowerCase())
       );
       onSearch(matchingResults);
-      // if (matchingResults.length === 0) {
-      //   setNoResult(true);
-      // }
-
     } catch (err) { console.error('Error fetching data:', err); }
   }
 
@@ -48,6 +43,7 @@ export function ProductSearch({ onSearch }) {
       setSuggestions(filterSuggestions);
     }
   }
+
   function handleKeyPress(event) {
     const enterButton = event.type === 'keypress' && event.keyCode === 13;
     const clickButton = event.type === 'click';

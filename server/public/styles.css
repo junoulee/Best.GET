@@ -271,6 +271,10 @@ a {
   margin-top: 5px;
 }
 
+.result-card-title {
+  color: black;
+}
+
 .result-card-title:hover {
   color: orange;
 }
