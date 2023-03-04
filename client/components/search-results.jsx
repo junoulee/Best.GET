@@ -5,7 +5,12 @@ import { Link } from 'react-router-dom';
 export default function SearchResults({ results, onProductClick }) {
   return (
     <>
-      <h7 className="results-text">{results.length} matching results found</h7>
+      <h6 className="results-text fst-italic">{results.length} matching results found</h6>
+      {(results.length === 0) && (
+        <div className="container search-result-container">
+          <div style={{ height: '33vh' }} />
+          </div>
+      )}
       <div className="container search-result-container">
 
         <div className="row">
@@ -19,11 +24,11 @@ export default function SearchResults({ results, onProductClick }) {
                   <button className="heart-favorites bg-white"><FaRegHeart /></button>
                   <img src={result.imageUrl} className="card-img-top" alt={result.name}/>
                   <div className="card-body card-body-top">
-                    <h5 className="card-title">{result.name}</h5>
+                    <h5 className="result-card-title">{result.name}</h5>
                   </div>
                   <ul className="list-group list-group-flush">
                     <li className="list-group-item stars"><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></li>
-                    <li className="list-group-item">{result.manufacturer}</li>
+                    <li className="list-group-item fw-bolder">{result.manufacturer}</li>
                     <li className="list-group-item price">
                       ${Number(result.price).toFixed(2).split('.')[0]}.
                       <span className="price-decimal">

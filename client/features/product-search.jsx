@@ -9,7 +9,7 @@ export function ProductSearch({ onSearch }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [suggestions, setSuggestions] = useState([]);
   const [submitted, setSubmitted] = useState(false);
-  const [noResult, setNoResult] = useState(false);
+  // const [noResult, setNoResult] = useState(false);
 
   async function handleSearch(event) {
     try {
@@ -20,14 +20,11 @@ export function ProductSearch({ onSearch }) {
         product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         product.description.toLowerCase().includes(searchTerm.toLowerCase())
       );
-      // setSearchResults(matchingResults);
       onSearch(matchingResults);
-      if (matchingResults.length === 0) {
-        setNoResult(true);
+      // if (matchingResults.length === 0) {
+      //   setNoResult(true);
+      // }
 
-      }
-      // eslint-disable-next-line
-      console.log(searchTerm, matchingResults, noResult);
     } catch (err) { console.error('Error fetching data:', err); }
   }
 
@@ -66,11 +63,14 @@ export function ProductSearch({ onSearch }) {
     <>
       <SearchBar handleSearch={handleSearch} handleKeyPress={handleKeyPress} handleInputChange={handleInputChange} />
       {searchTerm && submitted === false && (
-        <div className="search-dropdown">
-          {suggestions.map((value) =>
-            <a key={value.productId} href="" className="search-suggestions">{value.name}</a>
-          )}
-        </div>
+        <>
+          <div className="search-dropdown">
+            {suggestions.map((value) =>
+              <a key={value.productId} href="" className="search-suggestions">{value.name}</a>
+            )}
+          </div>
+          <div className="overlay" />
+          </>
       )}
     </>
   );
