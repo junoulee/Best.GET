@@ -55,10 +55,10 @@ export function Carousel({ images, onSearch }) {
                   <img className="d-block w-100 img-fluid rounded-3" src={slide.image} alt={`Slide ${i}`} />
                 </div>
               )}
-              <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <a className="carousel-control-prev" href="#" role="button" data-slide="prev" onClick={(event) => { previous(); event.stopPropagation(); }}>
                 <span className="carousel-control-prev-icon" onClick={previous} aria-hidden="true" />
               </a>
-              <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next" >
+              <a className="carousel-control-next" href="#" role="button" data-slide="next" onClick={(event) => { next(); event.stopPropagation(); }}>
                 <span className="carousel-control-next-icon" onClick={next} aria-hidden="true" />
               </a>
             </div>

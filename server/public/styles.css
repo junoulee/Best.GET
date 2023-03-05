@@ -199,10 +199,16 @@ a {
   height: 50px;
   display: flex;
   align-items: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   color: black;
   padding-left: 10px;
   padding-right: 5px;
   z-index: 2;
+}
+
+.search-suggestions:hover {
+  background-color: var(--color-e5e5e5c0);
 }
 
 .overlay {
