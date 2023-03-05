@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { SearchBar } from '../components/searchbar';
+import SearchSuggestions from '../components/search-suggestions';
 
 // Move searchResults to Home
 // Accept prop named "onSearch"
@@ -10,14 +11,14 @@ export function ProductSearch({ onSearch }) {
   const [suggestions, setSuggestions] = useState([]);
   const [submitted, setSubmitted] = useState(false);
 
-  async function handleSearch(event) {
+  async function handleSearch(event, searchTerm) {
     try {
       event.preventDefault();
       const response = await fetch('/api/products');
       const data = await response.json();
       const matchingResults = data.filter((product) =>
         product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        product.description.toLowerCase().includes(searchTerm.toLowerCase())
+        product.category.toLowerCase().includes(searchTerm.toLowerCase())
       );
       onSearch(matchingResults);
       setSubmitted(true);
@@ -60,17 +61,7 @@ export function ProductSearch({ onSearch }) {
     <>
       <SearchBar handleSearch={handleSearch} handleKeyPress={handleKeyPress} handleInputChange={handleInputChange} />
       {searchTerm && submitted === false && (
-        <>
-          <div className="search-dropdown">
-            {suggestions.map((value) =>
-              <a key={value.productId}
-              href=""
-              onClick={(event) => handleSearch(event, value.name)}
-              className="search-suggestions">{value.name}</a>
-            )}
-          </div>
-          <div className="overlay" />
-          </>
+        <SearchSuggestions suggestions={suggestions} handleSearch={handleSearch} />
       )}
     </>
   );

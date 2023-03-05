@@ -9,7 +9,7 @@ export default function SmallDisplays({ onSearch }) {
       const data = await response.json();
       const matchingResults = data.filter((product) =>
         product.name.toLowerCase().includes(productName.toLowerCase()) ||
-        product.description.toLowerCase().includes(productName.toLowerCase())
+        product.category.toLowerCase().includes(productName.toLowerCase())
       );
       onSearch(matchingResults);
     } catch (err) { console.error('Error fetching data:', err); }
