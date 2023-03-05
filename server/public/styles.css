@@ -52,11 +52,12 @@ a {
 
 .form-control {
   z-index: 2;
+  transition: 0.2s;
 }
 
 .form-control:focus {
   box-shadow: none;
-  border-color: inherit;
+  border: 1.5px solid var(--color-f6eb16);
   display: block;
 }
 

@@ -2,7 +2,6 @@ import React, { useState, useEffect, useCallback } from 'react';
 
 export function Carousel({ images, onSearch }) {
   const [currentSlide, setCurrentSlide] = useState(0);
-
   const lengthOfArray = images.length;
 
   const previous = useCallback(() => {
@@ -42,7 +41,7 @@ export function Carousel({ images, onSearch }) {
   return (
     <div className="col-lg-6">
       <div className="product-displays p-3">
-        <a href="" onClick={(event) => handleSearch(event, 'ipad')}>
+        <div role="button" tabIndex="-1" onClick={(event) => handleSearch(event, 'ipad')}>
           <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
             <ol className="carousel-indicators">
               {images.map((slide, i) =>
@@ -64,7 +63,7 @@ export function Carousel({ images, onSearch }) {
               </a>
             </div>
           </div>
-        </a>
+        </div>
       </div>
     </div>
   );
