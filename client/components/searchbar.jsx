@@ -34,13 +34,12 @@ export function SearchBar({ handleSearch, handleInputChange, handleKeyPress }) {
               onClick={() => {
                 handleInputChange({ target: { value: '' } });
                 setShowCloseButton(false);
-              }}
-            ><AiOutlineClose /></button>)}
+              }}>
+              <AiOutlineClose />
+            </button>)}
         </div>
-
         <button type="submit" onClick={handleKeyPress} className="input-group-text me-3 search-button"><BsSearch /></button >
       </div>
-
     </form>
   );
 }

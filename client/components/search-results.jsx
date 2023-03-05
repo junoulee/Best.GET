@@ -12,7 +12,6 @@ export default function SearchResults({ results, onProductClick }) {
           </div>
       )}
       <div className="container search-result-container">
-
         <div className="row">
 
           {results.map((result) => (
@@ -28,7 +27,7 @@ export default function SearchResults({ results, onProductClick }) {
                   </div>
                   <ul className="list-group list-group-flush">
                     <li className="list-group-item stars"><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></li>
-                    <li className="list-group-item fw-bolder">{result.manufacturer}</li>
+                    <li className="list-group-item">{result.manufacturer}</li>
                     <li className="list-group-item price">
                       ${Number(result.price).toFixed(2).split('.')[0]}.
                       <span className="price-decimal">
@@ -36,14 +35,9 @@ export default function SearchResults({ results, onProductClick }) {
                       </span>
                     </li>
                   </ul>
-                  {/* <div className="card-body card-body-bottom">
-                <a href="#" className="card-link">Card link</a>
-                <a href="#" className="card-link">Another link</a>
-              </div> */}
                 </div>
               </Link>
             </div>
-
           ))}
         </div>
       </div>

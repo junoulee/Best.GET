@@ -20,6 +20,7 @@ export function ProductSearch({ onSearch }) {
         product.description.toLowerCase().includes(searchTerm.toLowerCase())
       );
       onSearch(matchingResults);
+      setSubmitted(true);
     } catch (err) { console.error('Error fetching data:', err); }
   }
 
@@ -62,7 +63,10 @@ export function ProductSearch({ onSearch }) {
         <>
           <div className="search-dropdown">
             {suggestions.map((value) =>
-              <a key={value.productId} href="" className="search-suggestions">{value.name}</a>
+              <a key={value.productId}
+              href=""
+              onClick={(event) => handleSearch(event, value.name)}
+              className="search-suggestions">{value.name}</a>
             )}
           </div>
           <div className="overlay" />
