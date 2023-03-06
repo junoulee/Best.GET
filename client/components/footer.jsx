@@ -25,16 +25,16 @@ export default function Footer() {
               <div className="text-white col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                 <h6 className="text-uppercase fw-bold mb-4 mt-3"> About Us</h6>
                 <p>
-                  <a href="" className="text-reset">Angular</a>
+                  <a href="" className="text-reset">Corporate Information</a>
                 </p>
                 <p>
-                  <a href="" className="text-reset">React</a>
+                  <a href="" className="text-reset">Careers</a>
                 </p>
                 <p>
-                  <a href="" className="text-reset">Vue</a>
+                  <a href="" className="text-reset">FAQ</a>
                 </p>
                 <p>
-                  <a href="" className="text-reset">Laravel</a>
+                  <a href="" className="text-reset">Developers</a>
                 </p>
               </div>
               <div className="text-white col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
@@ -42,13 +42,13 @@ export default function Footer() {
                   Useful links
                 </h6>
                 <p>
-                  <a href="#!" className="text-reset">Pricing</a>
+                  <a href="#!" className="text-reset">Log In</a>
                 </p>
                 <p>
-                  <a href="#!" className="text-reset">Settings</a>
+                  <a href="#!" className="text-reset">Wishlist</a>
                 </p>
                 <p>
-                  <a href="#!" className="text-reset">Orders</a>
+                  <a href="#!" className="text-reset">View Cart</a>
                 </p>
                 <p>
                   <a href="#!" className="text-reset">Help</a>
