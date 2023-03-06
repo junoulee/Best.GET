@@ -47,11 +47,13 @@ export function ProductSearch({ onSearch }) {
   }
 
   function handleKeyPress(event) {
-    const enterButton = event.type === 'keypress' && event.keyCode === 13;
-    const clickButton = event.type === 'click';
-    if (enterButton || clickButton) {
+    const enterButtonPressed = event.type === 'keypress' && event.keyCode === 13;
+    const buttonClicked = event.type === 'click';
+
+    if (enterButtonPressed || buttonClicked) {
       setSubmitted(!submitted);
     }
+
     if (searchTerm === '') {
       setSubmitted(false);
     }
