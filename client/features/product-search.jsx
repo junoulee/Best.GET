@@ -11,7 +11,7 @@ export function ProductSearch({ onSearch }) {
   const [suggestions, setSuggestions] = useState([]);
   const [submitted, setSubmitted] = useState(false);
 
-  async function handleSearch(event, searchTerm) {
+  async function handleSearch(event, productName) {
     try {
       event.preventDefault();
       const response = await fetch('/api/products');
@@ -36,8 +36,8 @@ export function ProductSearch({ onSearch }) {
 
   function handleInputChange(event) {
     setSearchTerm(event.target.value);
-    const filterSuggestions = suggestions.filter((value) => {
-      return value.name.toLowerCase().includes(searchTerm.toLowerCase());
+    const filterSuggestions = suggestions.filter((product) => {
+      return product.name.toLowerCase().includes(searchTerm.toLowerCase());
     });
     if (event.target.value === '') {
       setSuggestions([]);
@@ -61,7 +61,7 @@ export function ProductSearch({ onSearch }) {
     <>
       <SearchBar handleSearch={handleSearch} handleKeyPress={handleKeyPress} handleInputChange={handleInputChange} />
       {searchTerm && submitted === false && (
-        <SearchSuggestions suggestions={suggestions} handleSearch={handleSearch} />
+        <SearchSuggestions setSubmitted={setSubmitted} onSearch={onSearch} suggestions={suggestions} />
       )}
     </>
   );
