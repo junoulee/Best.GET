@@ -26,19 +26,6 @@ export function Carousel({ images }) {
     return () => clearTimeout(slideShow);
   }, [next, currentSlide]);
 
-  // async function handleSearch(event, productName) {
-  //   try {
-  //     event.preventDefault();
-  //     const response = await fetch('/api/products');
-  //     const data = await response.json();
-  //     const matchingResults = data.filter((product) =>
-  //       product.name.toLowerCase().includes(productName.toLowerCase()) ||
-  //       product.description.toLowerCase().includes(productName.toLowerCase())
-  //     );
-  //     onSearch(matchingResults);
-  //   } catch (err) { console.error('Error fetching data:', err); }
-  // }
-
   return (
     <div className="col-lg-6">
       <div className="product-displays p-3">

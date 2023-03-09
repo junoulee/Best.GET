@@ -5,7 +5,7 @@ import NavBar from './navbar';
 import FreeShipping from './free-shipping';
 import Footer from './footer';
 
-export default function SearchResults({ searchTerm, onProductClick }) {
+export default function SearchResults({ searchTerm }) {
   const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
@@ -34,14 +34,13 @@ export default function SearchResults({ searchTerm, onProductClick }) {
         <div className="container search-result-container">
           <div style={{ height: '41.5vh' }} />
           </div>
-
       )}
+
       <div className="container search-result-container">
         <div className="row">
 
           {searchResults.map((result) => (
             <div className="col-12 col-sm-6 col-md-6 col-lg-3 mb-4" key={result.productId}>
-              {/* {onClick = {() => onProductClick(result.productId)}} -- for some reason this isn't needed */}
               <Link to={`/products/${result.productId}`}>
                 <div className="card w-100 result-card">
                   {/* this button will need to be worked on to be able to route user (cannot be a descendant of the Link above) */}

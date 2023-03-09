@@ -2,7 +2,6 @@ import React from 'react';
 import { carouselImages, Carousel } from '../components/carousel';
 import NavBar from '../components/navbar';
 import SmallDisplays from '../components/small-displays';
-
 import Footer from '../components/footer';
 
 export default function Home(props) {

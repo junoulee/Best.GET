@@ -36,10 +36,6 @@ export default function ViewDetails({ product }) {
                 <li className="list-group-item"><span className="detail-icons"><GoPackage /></span>Sold and shipped by Walmart.com</li>
                 <li className="list-group-item"><span className="detail-icons red"><FaRegHeart /></span>Add to wishlist</li>
               </ul>
-              {/* <div className="card-body">
-                  <a href="#" className="card-link">Card link</a>
-                  <a href="#" className="card-link">Another link</a>
-                </div> */}
             </div>
 
           </div>
