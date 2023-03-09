@@ -2,6 +2,7 @@ import React from 'react';
 
 export default function FreeShipping() {
   return (
+
     <header className="header-top-strip shipping">
       <div className="container-xxl">
         <div className="row">

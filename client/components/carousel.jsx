@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { Link } from 'react-router-dom';
 
-export function Carousel({ images, onSearch }) {
+export function Carousel({ images }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const lengthOfArray = images.length;
 
@@ -25,23 +26,23 @@ export function Carousel({ images, onSearch }) {
     return () => clearTimeout(slideShow);
   }, [next, currentSlide]);
 
-  async function handleSearch(event, productName) {
-    try {
-      event.preventDefault();
-      const response = await fetch('/api/products');
-      const data = await response.json();
-      const matchingResults = data.filter((product) =>
-        product.name.toLowerCase().includes(productName.toLowerCase()) ||
-        product.description.toLowerCase().includes(productName.toLowerCase())
-      );
-      onSearch(matchingResults);
-    } catch (err) { console.error('Error fetching data:', err); }
-  }
+  // async function handleSearch(event, productName) {
+  //   try {
+  //     event.preventDefault();
+  //     const response = await fetch('/api/products');
+  //     const data = await response.json();
+  //     const matchingResults = data.filter((product) =>
+  //       product.name.toLowerCase().includes(productName.toLowerCase()) ||
+  //       product.description.toLowerCase().includes(productName.toLowerCase())
+  //     );
+  //     onSearch(matchingResults);
+  //   } catch (err) { console.error('Error fetching data:', err); }
+  // }
 
   return (
     <div className="col-lg-6">
       <div className="product-displays p-3">
-        <div role="button" tabIndex="-1" onClick={(event) => handleSearch(event, 'ipad')}>
+        <Link to="/search?term=ipad" role="button" tabIndex="-1" >
           <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
             <ol className="carousel-indicators">
               {images.map((slide, i) =>
@@ -63,7 +64,7 @@ export function Carousel({ images, onSearch }) {
               </a>
             </div>
           </div>
-        </div>
+        </Link>
       </div>
     </div>
   );

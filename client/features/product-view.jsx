@@ -5,6 +5,8 @@ import ViewDetails from '../components/view-details';
 import Footer from '../components/footer';
 // import { Link } from 'react-router-dom';
 
+import SearchResults from '../components/search-results';
+
 export default function ProductView({ productId }) {
   const [searchResults, setSearchResults] = useState();
   const [product, setProduct] = useState();
@@ -24,15 +26,27 @@ export default function ProductView({ productId }) {
     }
   }, [productId]);
 
+  // useEffect(() => {
+  //   console.log(searchResults);
+  //   if (searchResults) {
+
+  //     navigate('/');
+  //   }
+  // }, [searchResults, navigate]);
+
   return (
     <>
       {/* <Link to="/"> */}
       <NavBar onSearch={setSearchResults} />
-      <FreeShipping />
+
       {/* </Link> */}
       {!searchResults && product && (
-        <ViewDetails product={product}/>
+        <>
+          <FreeShipping />
+          <ViewDetails product={product} />
+        </>
       )}
+      {searchResults && <SearchResults results={searchResults} />}
       <Footer />
     </>
   );

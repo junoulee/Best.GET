@@ -1,24 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { SearchBar } from '../components/searchbar';
 import SearchSuggestions from '../components/search-suggestions';
+import { useNavigate } from 'react-router-dom';
 
 export function ProductSearch({ onSearch }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [suggestions, setSuggestions] = useState([]);
   const [submitted, setSubmitted] = useState(false);
+  const navigate = useNavigate();
 
-  async function handleSearch(event, productName) {
-    try {
-      event.preventDefault();
-      const response = await fetch('/api/products');
-      const data = await response.json();
-      const matchingResults = data.filter((product) =>
-        product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        product.category.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-      onSearch(matchingResults);
-      setSubmitted(true);
-    } catch (err) { console.error('Error fetching data:', err); }
+  function handleSearch(event) {
+    event.preventDefault();
+    navigate(`/search?term=${searchTerm}`);
+
+    // try {
+    //   event.preventDefault();
+    //   const response = await fetch('/api/products');
+    //   const data = await response.json();
+    //   const matchingResults = data.filter((product) =>
+    //     product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    //     product.category.toLowerCase().includes(searchTerm.toLowerCase())
+    //   );
+    //   console.log(matchingResults);
+    //   onSearch(matchingResults);
+    //   setSubmitted(true);
+    // } catch (err) { console.error('Error fetching data:', err); }
   }
 
   useEffect(() => {
@@ -59,7 +65,7 @@ export function ProductSearch({ onSearch }) {
     <>
       <SearchBar handleSearch={handleSearch} handleKeyPress={handleKeyPress} handleInputChange={handleInputChange} />
       {searchTerm && submitted === false && (
-        <SearchSuggestions setSubmitted={setSubmitted} onSearch={onSearch} suggestions={suggestions} />
+        <SearchSuggestions setSubmitted={setSubmitted} suggestions={suggestions} />
       )}
     </>
   );
