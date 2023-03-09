@@ -1,20 +1,45 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaStar, FaRegHeart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import NavBar from './navbar';
+import FreeShipping from './free-shipping';
+import Footer from './footer';
 
-export default function SearchResults({ results, onProductClick }) {
+export default function SearchResults({ searchTerm, onProductClick }) {
+  const [searchResults, setSearchResults] = useState([]);
+
+  useEffect(() => {
+    async function handleSearch(productName) {
+      try {
+        const response = await fetch('/api/products');
+        const data = await response.json();
+        const matchingResults = data.filter((product) =>
+          product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        product.category.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+        setSearchResults(matchingResults);
+      } catch (err) { console.error('Error fetching data:', err); }
+    }
+    handleSearch();
+  });
+
   return (
     <>
-      <h6 className="results-text fst-italic">{results.length} matching results found</h6>
-      {(results.length === 0) && (
+      <NavBar />
+      <FreeShipping />
+      <div className="container search-result-container">
+        <h6 className="results-text fst-italic">{searchResults.length} matching results found</h6>
+      </div>
+      {(searchResults.length === 0) && (
         <div className="container search-result-container">
-          <div style={{ height: '33vh' }} />
+          <div style={{ height: '41.5vh' }} />
           </div>
+
       )}
       <div className="container search-result-container">
         <div className="row">
 
-          {results.map((result) => (
+          {searchResults.map((result) => (
             <div className="col-12 col-sm-6 col-md-6 col-lg-3 mb-4" key={result.productId}>
               {/* {onClick = {() => onProductClick(result.productId)}} -- for some reason this isn't needed */}
               <Link to={`/products/${result.productId}`}>
@@ -41,6 +66,7 @@ export default function SearchResults({ results, onProductClick }) {
           ))}
         </div>
       </div>
+      <Footer />
     </>
   );
 }
