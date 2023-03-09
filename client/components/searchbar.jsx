@@ -38,7 +38,7 @@ export function SearchBar({ handleSearch, handleInputChange, handleKeyPress }) {
               <AiOutlineClose />
             </button>)}
         </div>
-        <button type="submit" onClick={handleKeyPress} className="input-group-text me-3 search-button"><BsSearch /></button >
+        <button type="submit" onClick={handleKeyPress} className="input-group-text me-3 search-button"><BsSearch /></button>
       </div>
     </form>
   );

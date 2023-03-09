@@ -3,19 +3,6 @@ import { Link } from 'react-router-dom';
 
 export default function SmallDisplays() {
 
-  // async function handleSearch(event, productName) {
-  //   try {
-  //     event.preventDefault();
-  //     const response = await fetch('/api/products');
-  //     const data = await response.json();
-  //     const matchingResults = data.filter((product) =>
-  //       product.name.toLowerCase().includes(productName.toLowerCase()) ||
-  //       product.category.toLowerCase().includes(productName.toLowerCase())
-  //     );
-  //     onSearch(matchingResults);
-  //   } catch (err) { console.error('Error fetching data:', err); }
-  // }
-
   return (
     <div className="col-lg-6">
       <div className="d-flex flex-wrap justify-content-between align-items-center small-cards">

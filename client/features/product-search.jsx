@@ -3,7 +3,7 @@ import { SearchBar } from '../components/searchbar';
 import SearchSuggestions from '../components/search-suggestions';
 import { useNavigate } from 'react-router-dom';
 
-export function ProductSearch({ onSearch }) {
+export function ProductSearch() {
   const [searchTerm, setSearchTerm] = useState('');
   const [suggestions, setSuggestions] = useState([]);
   const [submitted, setSubmitted] = useState(false);
@@ -12,19 +12,6 @@ export function ProductSearch({ onSearch }) {
   function handleSearch(event) {
     event.preventDefault();
     navigate(`/search?term=${searchTerm}`);
-
-    // try {
-    //   event.preventDefault();
-    //   const response = await fetch('/api/products');
-    //   const data = await response.json();
-    //   const matchingResults = data.filter((product) =>
-    //     product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    //     product.category.toLowerCase().includes(searchTerm.toLowerCase())
-    //   );
-    //   console.log(matchingResults);
-    //   onSearch(matchingResults);
-    //   setSubmitted(true);
-    // } catch (err) { console.error('Error fetching data:', err); }
   }
 
   useEffect(() => {
