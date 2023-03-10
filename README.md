@@ -25,10 +25,7 @@ Try the application live at [https://best-dot-get.herokuapp.com/](https://best-d
 
 ## Preview
 
-
 ![Best.GET](server/public/images/best.get.gif)
-
-
 
 ## Features
 
@@ -65,8 +62,8 @@ Try the application live at [https://best-dot-get.herokuapp.com/](https://best-d
 1. Import the example database to PostgreSQL.
 
     ```shell
-    npm run db:import
     sudo service postgresql start
+    npm run db:import
     pgweb --db=finalProject
     ```
 
