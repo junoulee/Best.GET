@@ -25,7 +25,9 @@ Try the application live at [https://best-dot-get.herokuapp.com/](https://best-d
 
 ## Preview
 
+
 ![Best.GET](https://best-dot-get.herokuapp.com/images/best.get.gif)
+
 
 
 ## Features
