@@ -1,3 +1,76 @@
-# final-project
+# Best.GET
 
-A full stack JavaScript solo project.
+A full stack web application for consumers who want to shop for tech accessories and electronics.
+
+## Why I Built This
+
+I wanted to build an application that caters to the technological needs of developers.
+
+## Technologies Used
+
+- React.js
+- Webpack
+- Bootstrap 5
+- Node.js
+- Express.js
+- PostgreSQL
+- HTML5
+- CSS3
+- Heroku
+- Figma
+
+## Live Demo
+
+Try the application live at [https://best-dot-get.herokuapp.com/](https://best-dot-get.herokuapp.com/)
+
+## Preview
+
+![Best.GET](images/best.get.gif)
+<!-- /workspaces/Best.GET/server/public/images/best.get gif 1.gif
+/workspaces/Best.GET/server/public/images/best.get.gif -->
+
+## Features
+
+- User can search products with a search term
+- User can view a list of search results
+- User can view product details
+
+## Future features
+
+- User can log in
+- User can add items to cart
+- User can add items to wishlist
+
+### System Requirements
+
+- Node.js 10 or higher
+- NPM 6 or higher
+
+### Getting Started
+
+1. Clone the repository.
+
+    ```shell
+    git clone https://github.com/junoulee/Best.GET.git
+    cd Best.GET
+    ```
+
+1. Install all dependencies with NPM.
+
+    ```shell
+    npm install
+    ```
+
+1. Import the example database to PostgreSQL.
+
+    ```shell
+    npm run db:import
+    sudo service postgresql start
+    pgweb --db=finalProject
+    ```
+
+1. Start the project. Once started you can view the application by opening http://localhost:3000 in your browser.
+
+    ```shell
+    npm run dev
+    ```
