@@ -370,13 +370,6 @@ a {
     position: absolute;
     bottom: 55px;
     left: 50px;
-
-    /* .small-displays img {
-    width: 300px;
-    height: 280px;
-    object-fit: cover;
-    object-position: center;
-  } */
   }
 
   @media (min-width: 768px) {
