@@ -25,9 +25,8 @@ Try the application live at [https://best-dot-get.herokuapp.com/](https://best-d
 
 ## Preview
 
-![Best.GET](images/best.get.gif)
-<!-- /workspaces/Best.GET/server/public/images/best.get gif 1.gif
-/workspaces/Best.GET/server/public/images/best.get.gif -->
+[Best.GET](/workspaces/Best.GET/server/public/images/best.get.gif)
+
 
 ## Features
 
