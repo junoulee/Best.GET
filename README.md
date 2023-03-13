@@ -59,12 +59,35 @@ Try the application live at [https://best-dot-get.herokuapp.com/](https://best-d
     npm install
     ```
 
-1. Import the example database to PostgreSQL.
+1. Start PostgreSQL
 
     ```shell
     sudo service postgresql start
+    ```
+
+1. Create a local .env file from provided example file
+
+    ```shell
+    cp .env.example .env
+    ```
+
+1. Update the DATABASE_URL in the .env file. Update 'changeMe' to the name-of-database you wish to create.
+
+    ```shell
+    DATABASE_URL=postgres://dev:dev@localhost/changeMe?sslmode=disable
+    ```
+
+1. Create a database using the name-of-database set in the .env file.
+
+    ```shell
+    createdb name-of-database
+    ```
+
+1. Import the example database to PostgreSQL and start the database (http://localhost:8081/).
+
+    ```shell
     npm run db:import
-    pgweb --db=finalProject
+    pgweb --db=name-of-database
     ```
 
 1. Start the project. Once started you can view the application by opening http://localhost:3000 in your browser.
