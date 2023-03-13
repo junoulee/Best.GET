@@ -1,0 +1,15 @@
+import React from 'react';
+
+export default function WishList() {
+  return (
+
+    <div className="container-xxl d-flex justify-content-center align-items-center vh-100">
+      <div className="row">
+        <div className="col-12 text-center">
+          <p className="free-shipping-text">Wishlist Page Coming Soon</p>
+        </div>
+      </div>
+    </div>
+
+  );
+}
