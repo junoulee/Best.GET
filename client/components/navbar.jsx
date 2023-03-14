@@ -18,7 +18,7 @@ export default function NavBar() {
           </Link>
           <Link to="/wishlist" className="justify-content-end ms-5 left-icons"><SlHeart /></Link>
           <Link to="/login" className="justify-content-end left-icons"><VscAccount /></Link>
-          <a className="justify-content-end left-icons shopping-cart px-0"><BsCart3/></a>
+          <Link to="/cart" className="justify-content-end left-icons shopping-cart px-0"><BsCart3 /></Link>
           <ProductSearch />
           <Link to="/wishlist" className="d-none d-md-block right-icons mx-3"><SlHeart /></Link>
           <Link to="/wishlist" className="d-none d-md-block navbar-text text-white mb-0">View Wishlist</Link>

@@ -5,14 +5,16 @@ export default function LogInPage() {
   const navigate = useNavigate();
 
   const handleGoBack = () => {
-    navigate(-1); // Navigates to the previous page in the history stack
+    navigate(-1);
   };
 
   return (
     <>
       <header className="header-upper py-1 bg-white">
-        <div className="container-xxl d-flex justify-content-center align-items-center">
-          <img src="/images/logo.png" className="card-img-top" alt="..." style={{ width: '10%', height: '10%' }} />
+        <div className="container-xxl ">
+          <Link to="/" className="navbar-brand d-flex justify-content-center align-items-center">
+            <img src="/images/logo.png" className="card-img-top" alt="..." style={{ width: '10%', height: '10%' }} />
+          </Link>
         </div>
       </header>
 

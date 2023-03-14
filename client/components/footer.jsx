@@ -2,6 +2,7 @@ import React from 'react';
 import { BsFacebook, BsInstagram, BsLinkedin, BsGithub } from 'react-icons/bs';
 import { FiTwitter } from 'react-icons/fi';
 import { FaHome, FaRegEnvelope, FaPhone, FaPrint } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -28,13 +29,13 @@ export default function Footer() {
                   <a href="" className="text-reset">Corporate Information</a>
                 </p>
                 <p>
-                  <a href="" className="text-reset">Careers</a>
+                  <a href="https://jobs.com" target="_blank" className="text-reset" rel="noreferrer">Careers</a>
                 </p>
                 <p>
-                  <a href="" className="text-reset">FAQ</a>
+                  <a href="https://google.com" target="_blank" className="text-reset" rel="noreferrer">FAQ</a>
                 </p>
                 <p>
-                  <a href="" className="text-reset">Developers</a>
+                  <a href="https://github.com/junoulee" target="_blank" className="text-reset" rel="noreferrer">Developers</a>
                 </p>
               </div>
               <div className="text-white col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
@@ -42,13 +43,13 @@ export default function Footer() {
                   Useful links
                 </h6>
                 <p>
-                  <a href="#!" className="text-reset">Log In</a>
+                  <Link to="/login" className="text-reset">Log In</Link>
                 </p>
                 <p>
-                  <a href="#!" className="text-reset">Wishlist</a>
+                  <Link to="/wishlist" className="text-reset">Wishlist</Link>
                 </p>
                 <p>
-                  <a href="#!" className="text-reset">View Cart</a>
+                  <Link to="/cart" className="text-reset">View Cart</Link>
                 </p>
                 <p>
                   <a href="#!" className="text-reset">Help</a>
