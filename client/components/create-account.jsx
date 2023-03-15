@@ -31,7 +31,7 @@ export default function CreateAccount({ handleClick }) {
               <p className="list-group-item mb-0 mt-5">Already have an account?
                 <a
                   onClick={handleClick}
-                  style={{ color: 'blue' }}> Sign in</a></p>
+                  style={{ color: 'blue' }}> Log in</a></p>
             </div>
           </div>
         </div>
