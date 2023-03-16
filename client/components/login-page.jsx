@@ -43,13 +43,13 @@ export default function LogInPage() {
                           <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Email address"/>
                         </div>
                       </div>
-                      <div className="mb-3 row">
+                      <div className="mb-3 row mt-3">
                         <div className="col-12">
                           <input type="password" className="form-control" id="inputPassword" placeholder="Password" />
                         </div>
                       </div>
                     </ul>
-                    <a href="#" className="btn btn-primary border-0 fw-bold" style={{ backgroundColor: '#ffc107' }}>Log In</a>
+                    <a href="#" className="btn btn-primary border-0 fw-bold mt-3" style={{ backgroundColor: '#ffc107' }}>Log In</a>
                     <p className="list-group-item mb-0 mt-5">Don&apos;t have an account?
                       <a
                   onClick={handleClick}
