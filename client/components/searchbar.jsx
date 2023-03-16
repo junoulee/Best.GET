@@ -24,6 +24,7 @@ export function SearchBar({ handleSearch, handleInputChange, handleKeyPress }) {
           toggleX(event);
         }}
         onChange={handleInputChange}
+        autoComplete="off"
         placeholder="Search products" />
 
         <div className="input-group-append">

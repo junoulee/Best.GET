@@ -4,8 +4,11 @@ export default function CreateAccount({ handleClick }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [emailValid, setEmailValid] = useState(false);
+  const [passwordValid, setPasswordValid] = useState(false);
+  const [confirmPasswordValid, setConfirmPasswordValid] = useState(false);
 
-  const handleFormSubmit = (event) => {
+  function handleFormSubmit(event) {
     event.preventDefault();
 
     if (!email || !password || !confirmPassword) {
@@ -34,7 +37,21 @@ export default function CreateAccount({ handleClick }) {
         console.error(error);
         alert('Failed to create account.');
       });
-  };
+  }
+
+  function validateEmail(email) {
+    const emailRegex = /\S+@\S+\.\S+/;
+    return emailRegex.test(email);
+  }
+
+  function validatePassword(password) {
+    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+|~\-=?[\]{};:<>,.?])[0-9a-zA-Z!@#$%^&*()_+|~\-=?[\]{};:<>,.?]{8,}$/;
+    return passwordRegex.test(password);
+  }
+
+  function validateConfirmPassword(password, confirmPassword) {
+    return password === confirmPassword;
+  }
 
   return (
     <div className="container-xxl d-flex justify-content-center">
@@ -47,34 +64,47 @@ export default function CreateAccount({ handleClick }) {
               </div>
               <form onSubmit={handleFormSubmit}>
                 <ul className="list-group list-group-flush">
-                  <div className="mb-3 row mt-4">
+                  <div className=" row mt-4">
                     <div className="col-12">
                       <input type="email"
-                      className="form-control"
+                        className={`form-control ${emailValid ? 'is-valid' : email ? 'is-invalid' : ''}`}
                       id="exampleFormControlInput1"
                       value={email}
-                      onChange={(event) => setEmail(event.target.value)}
+                      autoComplete="off"
+                      onChange={(event) => {
+                        setEmail(event.target.value);
+                        setEmailValid(validateEmail(event.target.value));
+                      }}
                       placeholder="Email address" />
+
                     </div>
                   </div>
-                  <div className="mb-3 row">
+                  <div className="row mt-3">
                     <div className="col-12">
                       <input type="password"
-                      className="form-control"
+                        className={`form-control ${passwordValid ? 'is-valid' : password ? 'is-invalid' : ''}`}
                       id="inputPassword"
                       value={password}
-                      onChange={(event) => setPassword(event.target.value)}
+                      onChange={(event) => {
+                        setPassword(event.target.value);
+                        setPasswordValid(validatePassword(event.target.value));
+                      }}
                       placeholder="Password" />
+
                     </div>
                   </div>
-                  <div className="mb-3 row">
+                  <div className="mb-3 row mt-3">
                     <div className="col-12">
                       <input type="password"
-                      className="form-control"
+                        className={`form-control ${confirmPasswordValid ? 'is-valid' : passwordValid ? 'is-invalid' : ''}`}
                       id="confirmPassword"
                         value={confirmPassword}
-                      onChange={(event) => setConfirmPassword(event.target.value)}
+                      onChange={(event) => {
+                        setConfirmPassword(event.target.value);
+                        setConfirmPasswordValid(validateConfirmPassword(password, event.target.value));
+                      }}
                       placeholder="Confirm password" />
+
                     </div>
                   </div>
                 </ul>

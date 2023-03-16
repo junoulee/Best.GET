@@ -319,6 +319,11 @@ a {
 }
 
 /* product-view ends */
+
+/* login-view starts */
+
+/* login-view ends */
+
 @media (max-width: 576px) {
   .small-displays {
     width: 100%;
