@@ -11,8 +11,8 @@ export default function NavbarHeader() {
             </div>
             <div className="col-6">
               <a className="text-end text-white top-right mb-0">Contact Us</a>
-              <a className="text-end text-white top-right mb-0">Help</a>
-              <a className="text-end text-white top-right mb-0">FAQ</a>
+              <a href="https://github.com/junoulee/Best.GET#readme" className="text-end text-white top-right mb-0">Help</a>
+              <a href="https://www.ask.com/" className="text-end text-white top-right mb-0">FAQ</a>
             </div>
           </div>
         </div>

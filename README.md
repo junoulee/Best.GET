@@ -32,6 +32,7 @@ Try the application live at [https://best-dot-get.herokuapp.com/](https://best-d
 - User can search products with a search term
 - User can view a list of search results
 - User can view product details
+- User can create an account
 
 ## Future features
 

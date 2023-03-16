@@ -16,23 +16,23 @@ export default function Footer() {
                   <img src="/images/logo.png" alt="logo" width="100" height="70" className="d-inline-block align-text-top ms-3 mb-2 me-3" />
                 </h6>
                 <p className="social-media">
-                  <a className="social-icons" href="http://www.facebook.com"><BsFacebook /></a>
-                  <a className="social-icons" href="http://www.instagram.com"><BsInstagram /></a>
-                  <a className="social-icons" href="http://www.twitter.com"><FiTwitter /></a>
-                  <a className="social-icons" href="http://www.linkedin.com"><BsLinkedin /></a>
-                  <a className="social-icons" href="http://www.github.com"><BsGithub /></a>
+                  <a className="social-icons" target="_blank" href="http://www.facebook.com" rel="noreferrer"><BsFacebook /></a>
+                  <a className="social-icons" target="_blank" href="http://www.instagram.com" rel="noreferrer"><BsInstagram /></a>
+                  <a className="social-icons" target="_blank" href="http://www.twitter.com" rel="noreferrer"><FiTwitter /></a>
+                  <a className="social-icons" target="_blank" href="http://www.linkedin.com" rel="noreferrer"><BsLinkedin /></a>
+                  <a className="social-icons" target="_blank" href="http://www.github.com" rel="noreferrer"><BsGithub /></a>
                 </p>
               </div>
               <div className="text-white col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                 <h6 className="text-uppercase fw-bold mb-4 mt-3"> About Us</h6>
                 <p>
-                  <a href="" className="text-reset">Corporate Information</a>
+                  <a href="https://www.corporateinformation.com" target="_blank" className="text-reset" rel="noreferrer" >Corporate Information</a>
                 </p>
                 <p>
                   <a href="https://jobs.com" target="_blank" className="text-reset" rel="noreferrer">Careers</a>
                 </p>
                 <p>
-                  <a href="https://google.com" target="_blank" className="text-reset" rel="noreferrer">FAQ</a>
+                  <a href="https://ask.com" target="_blank" className="text-reset" rel="noreferrer">FAQ</a>
                 </p>
                 <p>
                   <a href="https://github.com/junoulee" target="_blank" className="text-reset" rel="noreferrer">Developers</a>
@@ -52,7 +52,7 @@ export default function Footer() {
                   <Link to="/cart" className="text-reset">View Cart</Link>
                 </p>
                 <p>
-                  <a href="#!" className="text-reset">Help</a>
+                  <a href="https://github.com/junoulee/Best.GET#readme" className="text-reset">Help</a>
                 </p>
               </div>
               <div className="text-white col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
