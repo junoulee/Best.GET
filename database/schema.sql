@@ -10,7 +10,7 @@ CREATE TABLE "public"."users" (
 	"user_id" serial NOT NULL,
 	"email" varchar(255) NOT NULL,
 	"hashedPassword" varchar(255) NOT NULL,
-	"created_at" TIMESTAMP(255) NOT NULL,
+	"created_at" TIMESTAMP(255) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT "users_pk" PRIMARY KEY ("user_id")
 ) WITH (
   OIDS=FALSE

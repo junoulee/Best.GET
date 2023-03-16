@@ -1,4 +1,5 @@
 require('dotenv/config');
+const argon2 = require('argon2');
 const express = require('express');
 const path = require('path');
 const staticMiddleware = require('./static-middleware');
@@ -64,6 +65,34 @@ app.get('/api/products/:productId', (req, res, next) => {
         throw new ClientError(404, 'Product cannot be found');
       }
       res.status(200).json(product);
+    })
+    .catch((err) => next(err));
+});
+
+app.post('/api/login', (req, res, next) => {
+  const { email, password } = req.body;
+  // console.log('email:', email);
+  // console.log('password:', password);
+  if (!email || !password) {
+    throw new ClientError(400, 'email and password are required fields');
+  }
+
+  argon2
+    .hash(password)
+    .then((hashedPassword) => {
+
+      const sql = `
+INSERT INTO "users" ("email", "hashedPassword", "created_at")
+VALUES ($1, $2, NOW())
+  returning *
+  `;
+      const params = [email, hashedPassword];
+      db.query(sql, params)
+        .then((result) => {
+          const [newUser] = result.rows;
+          res.status(201).json(newUser);
+        })
+        .catch((err) => next(err));
     })
     .catch((err) => next(err));
 });

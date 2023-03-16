@@ -53,7 +53,7 @@ export default function LogInPage() {
                     <p className="list-group-item mb-0 mt-5">Don&apos;t have an account?
                       <a
                   onClick={handleClick}
-                  style={{ color: 'blue' }}> Create Account</a></p>
+                  style={{ color: 'blue', whiteSpace: 'nowrap' }}> Create Account</a></p>
                   </div>
                 </div>
                 <Link to="#" onClick={handleGoBack}>Go back to previous page</Link>

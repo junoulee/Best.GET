@@ -59,13 +59,13 @@ Try the application live at [https://best-dot-get.herokuapp.com/](https://best-d
     npm install
     ```
 
-1. Start PostgreSQL
+1. Start PostgreSQL.
 
     ```shell
     sudo service postgresql start
     ```
 
-1. Create a local .env file from provided example file
+1. Create a local .env file from provided example file.
 
     ```shell
     cp .env.example .env
