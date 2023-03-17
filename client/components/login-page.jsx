@@ -16,19 +16,20 @@ export default function LogInPage() {
   };
 
   return (
-    <>
-      <header className="header-upper py-1 bg-white">
-        <div className="container-xxl ">
-          <Link to="/" className="navbar-brand d-flex justify-content-center align-items-center">
-            <img src="/images/logo.png" className="card-img-top" alt="..." style={{ width: '10%', height: '10%' }} />
-          </Link>
-        </div>
-      </header>
-      {createAccount
-        ? (
-          <CreateAccount handleClick={handleClick} />
-          )
-        : (
+
+    createAccount
+      ? (
+        <CreateAccount handleClick={handleClick} />
+        )
+      : (
+        <>
+          <header className="header-upper py-1 bg-white">
+            <div className="container-xxl ">
+              <Link to="/" className="navbar-brand d-flex justify-content-center align-items-center">
+                <img src="/images/logo.png" className="card-img-top" alt="..." style={{ width: '10%', height: '10%' }} />
+              </Link>
+            </div>
+          </header>
           <div className="container-xxl d-flex justify-content-center">
             <div className="row">
               <div className="col-12 text-center">
@@ -43,7 +44,7 @@ export default function LogInPage() {
                           <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Email address"/>
                         </div>
                       </div>
-                      <div className="mb-3 row mt-3">
+                      <div className="mb-3 row">
                         <div className="col-12">
                           <input type="password" className="form-control" id="inputPassword" placeholder="Password" />
                         </div>
@@ -61,7 +62,7 @@ export default function LogInPage() {
             </div>
 
           </div>
-          )}
-    </>
+        </>
+        )
   );
 }
