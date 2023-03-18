@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import LogInPage from './login-page';
 import { Link } from 'react-router-dom';
+import { FaInfoCircle } from 'react-icons/fa';
 
 export default function CreateAccount({ handleClick }) {
   const [email, setEmail] = useState('');
@@ -92,8 +93,11 @@ export default function CreateAccount({ handleClick }) {
                               setEmail(event.target.value);
                               setEmailValid(validateEmail(event.target.value));
                             }}
-                            placeholder="Email address"
-                          />
+                            placeholder="Email address"/>
+                            <p id="uidnote" className={email && !emailValid ? 'instructions' : 'hidden'}>
+                              <FaInfoCircle />
+                              Please input a valid email address.
+                            </p>
                           </div>
                         </div>
                         <div className="row mt-3">
@@ -107,8 +111,12 @@ export default function CreateAccount({ handleClick }) {
                               setPassword(event.target.value);
                               setPasswordValid(validatePassword(event.target.value));
                             }}
-                            placeholder="Password"
-                          />
+                            placeholder="Password"/>
+                            <p id="pwdnote" className={passwordValid ? 'hidden' : password ? 'instructions' : 'hidden'}>
+                              <FaInfoCircle />
+                              Password must be a minimum of 8 characters.<br />
+                              Must include uppercase and lowercase letters, a number, and a special character.
+                            </p>
                           </div>
                         </div>
                         <div className="mb-3 row mt-3">
@@ -122,16 +130,18 @@ export default function CreateAccount({ handleClick }) {
                               setConfirmPassword(event.target.value);
                               setConfirmPasswordValid(validateConfirmPassword(password, event.target.value));
                             }}
-                            placeholder="Confirm password"
-                          />
+                            placeholder="Confirm password"/>
+                            <p id="confirmnote" className={confirmPasswordValid ? 'hidden' : confirmPassword ? 'instructions' : 'hidden'}>
+                              <FaInfoCircle />
+                              Must match provided password.
+                            </p>
                           </div>
                         </div>
                       </ul>
                       <button
                       type="submit"
                       className="btn btn-primary border-0 fw-bold"
-                      style={{ backgroundColor: '#ffc107' }}>Create Account
-                      </button>
+                      style={{ backgroundColor: '#ffc107' }}>Create Account</button>
                     </form>
                     <p className="list-group-item mb-0 mt-5">
                       Already have an account?
