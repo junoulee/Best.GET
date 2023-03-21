@@ -3,7 +3,7 @@ import LogInPage from './login-page';
 import { Link } from 'react-router-dom';
 import { FaInfoCircle } from 'react-icons/fa';
 
-export default function CreateAccount({ handleClick }) {
+export default function CreateAccount() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -23,7 +23,7 @@ export default function CreateAccount({ handleClick }) {
       return;
     }
 
-    fetch('/api/login', {
+    fetch('/api/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -55,6 +55,9 @@ export default function CreateAccount({ handleClick }) {
   }
 
   function validateConfirmPassword(password, confirmPassword) {
+    if (confirmPassword === '') {
+      return;
+    }
     return password === confirmPassword;
   }
 
@@ -76,7 +79,7 @@ export default function CreateAccount({ handleClick }) {
           <div className="container-xxl d-flex justify-content-center">
             <div className="row">
               <div className="col-12 text-center">
-                <div className="card mt-4" style={{ width: '22rem' }}>
+                <div className="card mt-4" style={{ width: '22rem', borderColor: 'darkgray' }}>
                   <div className="card-body">
                     <div className="card-header bg-white fs-3 fw-bold">Create Account</div>
                     <form onSubmit={handleFormSubmit}>
@@ -95,7 +98,7 @@ export default function CreateAccount({ handleClick }) {
                             }}
                             placeholder="Email address"/>
                             <p id="uidnote" className={email && !emailValid ? 'instructions' : 'hidden'}>
-                              <FaInfoCircle />
+                              <FaInfoCircle className="info-circle" />
                               Please input a valid email address.
                             </p>
                           </div>
@@ -113,7 +116,7 @@ export default function CreateAccount({ handleClick }) {
                             }}
                             placeholder="Password"/>
                             <p id="pwdnote" className={passwordValid ? 'hidden' : password ? 'instructions' : 'hidden'}>
-                              <FaInfoCircle />
+                              <FaInfoCircle className="info-circle" />
                               Password must be a minimum of 8 characters.<br />
                               Must include uppercase and lowercase letters, a number, and a special character.
                             </p>
@@ -123,7 +126,7 @@ export default function CreateAccount({ handleClick }) {
                           <div className="col-12">
                             <input
                             type="password"
-                            className={`form-control ${confirmPasswordValid ? 'is-valid' : passwordValid ? 'is-invalid' : ''}`}
+                              className={`form-control ${confirmPasswordValid ? 'is-valid' : confirmPassword ? 'is-invalid' : ''}`}
                             id="confirmPassword"
                             value={confirmPassword}
                             onChange={(event) => {
@@ -132,7 +135,7 @@ export default function CreateAccount({ handleClick }) {
                             }}
                             placeholder="Confirm password"/>
                             <p id="confirmnote" className={confirmPasswordValid ? 'hidden' : confirmPassword ? 'instructions' : 'hidden'}>
-                              <FaInfoCircle />
+                              <FaInfoCircle className="info-circle"/>
                               Must match provided password.
                             </p>
                           </div>
@@ -145,10 +148,11 @@ export default function CreateAccount({ handleClick }) {
                     </form>
                     <p className="list-group-item mb-0 mt-5">
                       Already have an account?
-                      <a onClick={handleClick} style={{ color: 'blue' }}> Log in</a>
+                      <Link to="/login" style={{ color: 'blue' }}> Log in</Link>
                     </p>
                   </div>
                 </div>
+                <Link to="/">Go back to homepage</Link>
               </div>
             </div>
           </div>
