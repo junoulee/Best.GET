@@ -6,6 +6,7 @@ import SearchResults from './components/search-results';
 import LogInPage from './components/login-page';
 import WishList from './components/wishlist';
 import ShoppingCart from './components/shopping-cart';
+import CreateAccount from './components/create-account';
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
       <Route path="/search" element={<SearchResultsWithParams />} />
       <Route path="/products/:productId" element={<ProductViewWithParams />} />
       <Route path="/login" element={<LogInPage />} />
+      <Route path="/register" element={<CreateAccount />} />
       <Route path="/wishlist" element={<WishList />} />
       <Route path="/cart" element={<ShoppingCart />} />
     </Routes>
