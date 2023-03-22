@@ -1,4 +1,5 @@
-require('dotenv/config');
+// require('dotenv/config');
+require('dotenv').config();
 const argon2 = require('argon2');
 const express = require('express');
 const path = require('path');
@@ -100,9 +101,11 @@ app.post('/api/register', (req, res, next) => {
 
 app.post('/api/login', (req, res, next) => {
   const { email, password } = req.body;
+
   if (!email || !password) {
     throw new ClientError(401, 'invalid login');
   }
+
   const sql = `
     select "userId",
            "hashedPassword"
@@ -110,6 +113,7 @@ app.post('/api/login', (req, res, next) => {
      where "email" = $1
   `;
   const params = [email];
+
   db.query(sql, params)
     .then((result) => {
       const [user] = result.rows;
@@ -117,18 +121,23 @@ app.post('/api/login', (req, res, next) => {
         throw new ClientError(401, 'invalid login');
       }
       const { userId, hashedPassword } = user;
+
       return argon2
         .verify(hashedPassword, password)
         .then((isMatching) => {
           if (!isMatching) {
             throw new ClientError(401, 'invalid login');
           }
-          const payload = { userId, email };
-          const token = jwt.sign(payload, process.env.TOKEN_SECRET);
-          res.json({ token, user: payload });
+          // const payload = { userId, email };
+          // console.log(process.env.TOKEN_SECRET);
+          const token = jwt.sign({ userId }, process.env.TOKEN_SECRET);
+          res.status(200).json({ token, hashedPassword });
         });
     })
-    .catch((err) => next(err));
+    .catch((err) => {
+      console.error('argon2.verify error', err);
+      next(err);
+    });
 });
 
 app.get('*', (req, res) => {

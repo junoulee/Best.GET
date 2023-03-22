@@ -3,7 +3,42 @@ import { Link } from 'react-router-dom';
 // import CreateAccount from './create-account';
 
 export default function LogInPage() {
+  // const [email, setEmail] = useState('');
+  // const [password, setPassword] = useState('');
 
+  // function loginUser(email, password) {
+  //   return fetch('/api/login', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     },
+  //     body: JSON.stringify({ email, password })
+  //   })
+  //     .then((response) => {
+  //       if (!response.ok) {
+  //         throw new Error('Network response was not ok');
+  //       }
+  //       return response.json();
+  //     })
+  //     .then((data) => {
+  //       const { token } = data;
+  //       if (!token) {
+  //         throw new Error('Token not found');
+  //       }
+  //       return token;
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error:', error);
+  //     });
+  // }
+
+  // const handleLogin = (event) => {
+  //   event.preventDefault();
+  //   loginUser(email, password)
+  //     .then((token) => {
+  //       localStorage.setItem('token', token);
+  //     });
+  // };
   return (
 
     <>
@@ -25,7 +60,7 @@ export default function LogInPage() {
                 <ul className="list-group list-group-flush">
                   <div className="mb-3 row mt-4">
                     <div className="col-12">
-                      <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Email address"/>
+                      <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Email address" />
                     </div>
                   </div>
                   <div className="mb-3 row">
