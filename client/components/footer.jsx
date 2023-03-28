@@ -20,7 +20,7 @@ export default function Footer() {
                   <a className="social-icons" target="_blank" href="http://www.instagram.com" rel="noreferrer"><BsInstagram /></a>
                   <a className="social-icons" target="_blank" href="http://www.twitter.com" rel="noreferrer"><FiTwitter /></a>
                   <a className="social-icons" target="_blank" href="http://www.linkedin.com" rel="noreferrer"><BsLinkedin /></a>
-                  <a className="social-icons" target="_blank" href="http://www.github.com" rel="noreferrer"><BsGithub /></a>
+                  <a className="social-icons" target="_blank" href="https://github.com/junoulee" rel="noreferrer"><BsGithub /></a>
                 </p>
               </div>
               <div className="text-white col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
@@ -58,7 +58,7 @@ export default function Footer() {
               <div className="text-white col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                 <h6 className="text-uppercase fw-bold mb-4 mt-3">Contact</h6>
                 <p><FaHome /> La Habra, CA 90631, USA</p>
-                <p><FaRegEnvelope /> info@example.com</p>
+                <p><FaRegEnvelope /> junoulee@gmail.com</p>
                 <p><FaPhone /> + 01 234 567 88</p>
                 <p><FaPrint /> + 01 234 567 89</p>
               </div>
@@ -68,7 +68,7 @@ export default function Footer() {
 
         <div className="text-center p-4" style={{ backgroundColor: '#e5e5e5c0' }}>
           © 2023 Copyright:
-          <a className="text-reset copyright fw-bold" href=""> C1222 Final Project</a>
+          <a className="text-reset copyright fw-bold" href=""> Best.GET</a>
         </div>
 
       </footer>
