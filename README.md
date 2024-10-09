@@ -21,7 +21,7 @@ I wanted to build an application that caters to the technological needs of devel
 
 ## Live Demo
 
-Try the application live at [https://best-p9hlpm9n1-junoulees-projects.vercel.app/#](https://best-p9hlpm9n1-junoulees-projects.vercel.app/#)
+Try the application live at [https://best-p9hlpm9n1-junoulees-projects.vercel.app](https://best-p9hlpm9n1-junoulees-projects.vercel.app)
 
 ## Preview
 
